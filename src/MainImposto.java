@@ -7,7 +7,8 @@ public class MainImposto {
         Locale.setDefault(Locale.US);
         Scanner sc = new Scanner(System.in);
 
-        double salarioAnual, pretacaoServico, ganhoCapital, gastosMedicos, gastosEducacionais, salarioMensal, impostoSalario;
+        double salarioAnual, pretacaoServico, ganhoCapital, gastosMedicos,
+                gastosEducacionais, salarioMensal, impostoSalario, impostoPrestacao;
 
         System.out.print("Renda anual com o salário: ");
         salarioAnual = sc.nextDouble();
@@ -41,6 +42,15 @@ public class MainImposto {
             impostoSalario = salarioAnual * 0.20;
             System.out.printf("Imposto sobre salário: %.2f%n", impostoSalario);
         }
+
+        if (pretacaoServico <= 0.00) {
+            System.out.println("Imposto sobre serviço: " + 0.00);
+        } else {
+            impostoPrestacao = pretacaoServico * 0.15;
+            System.out.printf("Imposto sobre serviço: %.2f%n", impostoPrestacao);
+        }
+
+
 
 
         sc.close();
