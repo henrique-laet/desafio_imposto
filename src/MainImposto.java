@@ -9,7 +9,7 @@ public class MainImposto {
 
         double salarioAnual, pretacaoServico, ganhoCapital, gastosMedicos,
                 gastosEducacionais, salarioMensal, impostoSalario = 0, impostoPrestacao = 0,
-                impostoCapital = 0, maximoDedutivel, gastosDedutiveis;
+                impostoCapital = 0, maximoDedutivel, gastosDedutiveis, impostoBruto, impostoDevido;
 
         System.out.print("Renda anual com o salário: ");
         salarioAnual = sc.nextDouble();
@@ -67,6 +67,23 @@ public class MainImposto {
 
         gastosDedutiveis = gastosMedicos + gastosEducacionais;
         System.out.printf("Gastos dedutíveis: %.2f%n", gastosDedutiveis);
+
+        System.out.println();
+        System.out.println("RESUMO: ");
+
+        impostoBruto =  (impostoSalario + impostoPrestacao + impostoCapital);
+        System.out.printf("Imposto bruto total: %.2f%n", impostoBruto);
+
+        if (maximoDedutivel > gastosDedutiveis) {
+            System.out.printf("Abatimento: %.2f%n",gastosDedutiveis);
+            impostoDevido = impostoBruto - gastosDedutiveis;
+        }else {
+            System.out.printf("Abatimento: %.2f%n",maximoDedutivel);
+            impostoDevido = impostoBruto - maximoDedutivel;
+        }
+
+        System.out.printf("Imposto devido: %.2f%n",impostoDevido);
+
 
         sc.close();
     }
