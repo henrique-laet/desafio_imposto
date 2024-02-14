@@ -8,7 +8,8 @@ public class MainImposto {
         Scanner sc = new Scanner(System.in);
 
         double salarioAnual, pretacaoServico, ganhoCapital, gastosMedicos,
-                gastosEducacionais, salarioMensal, impostoSalario, impostoPrestacao;
+                gastosEducacionais, salarioMensal, impostoSalario, impostoPrestacao,
+                impostoCapital;
 
         System.out.print("Renda anual com o salário: ");
         salarioAnual = sc.nextDouble();
@@ -50,6 +51,12 @@ public class MainImposto {
             System.out.printf("Imposto sobre serviço: %.2f%n", impostoPrestacao);
         }
 
+        if (ganhoCapital <= 0.00) {
+            System.out.println("Imposto sobre ganho capital: " + 0.00);
+        } else {
+            impostoCapital = ganhoCapital * 0.20;
+            System.out.printf("Imposto sobre ganho capital: %.2f%n", impostoCapital);
+        }
 
 
 
